@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   constructor(private http:HttpClient,public router: Router) { }
   
   ngOnInit():void {
-    this.http.get<admin>('http://localhost:8080/service/60d7af1ad39ade21347cf92b').subscribe(result=>{this.adminservice=result})
+    this.http.get<admin>('http://localhost:8080/service/60d7af1ad39ade21347cf92b').subscribe((result: admin)=>{this.adminservice=result})
   }
   signin(){
     console.log(this.adminservice)
